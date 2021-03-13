@@ -1,0 +1,26 @@
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+
+  <div  *ngIf="dataLoaded == true" >
+    
+<div class="alert alert-warning" role="alert">
+  <h4>Markalar Listesi</h4>
+
+  </div>
+   <div *ngFor="let brand of brands" class="list-group">
+      <a
+        href="#"
+        class="list-group-item list-group-item-action m-1 mt-0"
+        aria-current="true"
+      >
+      {{ brand.brandId}}
+        {{ brand.brandName }}
+      </a>
+    </div>
+  </div>

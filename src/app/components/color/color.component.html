@@ -1,0 +1,26 @@
+<div
+  *ngIf="dataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+
+  <div  *ngIf="dataLoaded == true" >
+    
+<div class="alert alert-warning" role="alert">
+  <h4>Renk Listesi</h4>
+
+  </div>
+   <div *ngFor="let color of colors" class="list-group">
+      <a
+        href="#"
+        class="list-group-item list-group-item-action m-1 mt-0"
+        aria-current="true"
+      >
+      {{ color.colorId}}
+        {{ color.colorName }}
+      </a>
+    </div>
+  </div>
