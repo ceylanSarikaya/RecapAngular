@@ -1,0 +1,12 @@
+.cardCeylan{
+    border: none;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.5 ease;
+}
+ .cardCeylan:hover{
+    opacity: 1;
+}
+.w3-lobster {
+    font-family: "Lobster", Sans-serif;
+  }

@@ -9,6 +9,7 @@ import { ColorService } from 'src/app/services/colorService';
 })
 export class ColorComponent implements OnInit {
   colors:Color[]=[];
+  currentColor:Color;
   dataLoaded = false;
   constructor(private colorService:ColorService) { }
 
@@ -20,5 +21,17 @@ export class ColorComponent implements OnInit {
       this.colors = response.data;
       this.dataLoaded = true;
     });
+    
+  }
+  setCurrentColor(color:Color){
+this.currentColor=color;
+  }
+  getCurrentColorClass(color:Color){
+if(color==this.currentColor){
+ return "btn btn-primary m-2"
+}
+else{
+  return "btn btn-light m-2 mt-0 "
+}
   }
 }

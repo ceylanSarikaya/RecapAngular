@@ -10,6 +10,8 @@ import { BrandService } from 'src/app/services/brandService';
 })
 export class BrandComponent implements OnInit {
 brands:Brand[]=[];
+currentBrand:Brand;
+emptyBrand:Brand;
 dataLoaded = false;
   constructor(private brandService:BrandService) { }
 
@@ -23,4 +25,26 @@ dataLoaded = false;
       this.dataLoaded = true;
     });
   }
+  setCurrentBrand(brand:Brand){
+    this.currentBrand=brand;
+      }
+      getCurrentBrandClass(brand:Brand){
+    if(brand==this.currentBrand){
+      return 'btn btn-primary  m-2 ';
+    }
+    else{
+      return 'btn btn-light m-2 ';
+    }
+      }
+      setBrandAll(){
+this.currentBrand=this.emptyBrand 
+      }
+      getBrandAll(){
+        if(this.currentBrand==this.emptyBrand){
+          return 'btn btn-primary form-control ';
+         }
+         else{
+          return 'btn btn-light form-control';
+         }
+      }
 }

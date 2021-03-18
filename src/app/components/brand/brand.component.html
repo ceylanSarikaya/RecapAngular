@@ -9,18 +9,28 @@
 
   <div  *ngIf="dataLoaded == true" >
     
-<div class="alert alert-warning" role="alert">
+<div class="alert" style="background-color: skyblue;" role="alert">
   <h4>Markalar Listesi</h4>
+  
 
   </div>
-   <div *ngFor="let brand of brands" class="list-group">
+  <div>
+    <a
+    routerLink="cars"
+      (click)="setBrandAll()"
+      [class]="getBrandAll()"
+    >
+      Tüm Arabalar
+</a>
+  </div>
+  <div (click)="setCurrentBrand(brand)" *ngFor="let brand of brands" class="list-group">
       <a
-        href="#"
-        class="list-group-item list-group-item-action m-1 mt-0"
+      routerLink="/cars/brand/{{brand.brandId}}"
+  
+        [class]=" getCurrentBrandClass(brand)"
         aria-current="true"
       >
-      {{ brand.brandId}}
-        {{ brand.brandName }}
+      <h5 > {{ brand.brandName }}</h5> 
       </a>
     </div>
   </div>

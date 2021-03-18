@@ -1,0 +1,35 @@
+
+  <div style="background-color:skyblue;"  class="w3-card-4  col-10">
+
+    <div *ngIf="dataLoaded==true" class="w3-container w3-center">
+      <h3 class="w3-xxlarge font-effect-shadow-multiple w3-lobster">{{car.brandName}}</h3>
+      <div class="row">
+        <div id="carouselExampleIndicators"  class="carousel slide" data-bs-ride="carousel">
+          <div style="background-color: skyblue;" class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          </div>
+          <div class="carousel-inner" >
+            <div [class]= "getCarImageClass(car)" *ngFor="let car of  carImages" >
+              <img style="max-height:280px;background-size:contain;" src="https://localhost:5001{{car.imagePath}}"class="d-block w-100" alt="https://localhost:5001{{car.imagePath}}" >
+            </div>
+          </div>
+          <button  style="background-color: skyblue;" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button  style="background-color: skyblue;" class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+      <h5>{{car.description}}</h5>
+    
+      <button style="width:200px;"  class="btn btn-primary btn-outline-light  justify-content-between "> Kirala</button> 
+    </div>
+    
+    </div>

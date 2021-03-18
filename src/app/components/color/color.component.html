@@ -9,18 +9,23 @@
 
   <div  *ngIf="dataLoaded == true" >
     
-<div class="alert alert-warning" role="alert">
+<div class="alert " style="background-color: skyblue;" role="alert">
   <h4>Renk Listesi</h4>
 
   </div>
-   <div *ngFor="let color of colors" class="list-group">
+
+   <div (click)="setCurrentColor(color)" *ngFor="let color of colors" class="list-group">
+   
       <a
-        href="#"
-        class="list-group-item list-group-item-action m-1 mt-0"
+    
+      routerLink="/cars/color/{{color.colorId}}"
+    
+        [class]=" getCurrentColorClass(color)"
         aria-current="true"
       >
-      {{ color.colorId}}
-        {{ color.colorName }}
+   
+      <h5> {{ color.colorName }}</h5> 
       </a>
+
     </div>
   </div>
